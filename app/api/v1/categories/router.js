@@ -2,6 +2,7 @@ const express = require('express');
 const router = express();
 
 const { create, index, find, update, destroy } = require('./controller');
+// const { } = require('../../../middlewares.auth');
 
 router.post('/categories', create);
 // route baru untuk mendapatkan daftar categories
