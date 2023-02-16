@@ -7,6 +7,6 @@ module.exports = {
   // jwtRefreshTokenSecret: process.env.JWT_SECRET_REFRESH_TOKEN,
   jwtExpiration: '24h',
   // jwtRefreshTokenExpiration: '24h',
-  // gmail: process.env.GMAIL,
-  // password: process.env.PASSWORD,
+  gmail: process.env.GMAIL,
+  password: process.env.PASSWORD,
 };

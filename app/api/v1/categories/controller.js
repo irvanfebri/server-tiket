@@ -1,4 +1,3 @@
-// const Categories = require('./model');
 const { StatusCodes } = require('http-status-codes');
 
 const {

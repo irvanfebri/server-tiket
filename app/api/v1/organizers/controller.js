@@ -6,18 +6,6 @@ const {
   getAllUsers,
 } = require('../../../services/mongoose/users');
 
-const createCMSOrganizer = async (req, res, next) => {
-  try {
-    const result = await createOrganizer(req);
-
-    res.status(StatusCodes.CREATED).json({
-      data: result,
-    });
-  } catch (err) {
-    next(err);
-  }
-};
-
 const getCMSUsers = async (req, res, next) => {
   try {
     const result = await getAllUsers(req);
@@ -29,6 +17,17 @@ const getCMSUsers = async (req, res, next) => {
   }
 };
 
+const createCMSOrganizer = async (req, res, next) => {
+  try {
+    const result = await createOrganizer(req);
+
+    res.status(StatusCodes.CREATED).json({
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 const createCMSUser = async (req, res, next) => {
   try {
     const result = await createUsers(req);
@@ -40,8 +39,9 @@ const createCMSUser = async (req, res, next) => {
     next(err);
   }
 };
+
 module.exports = {
   createCMSOrganizer,
-  getCMSUsers,
   createCMSUser,
+  getCMSUsers,
 };
