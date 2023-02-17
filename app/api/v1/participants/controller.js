@@ -2,9 +2,9 @@ const {
   signupParticipant,
   activateParticipant,
   signinParticipant,
-  // getAllEvents,
-  // getOneEvent,
-  // getAllOrders,
+  getAllEvents,
+  getOneEvent,
+  getAllOrders,
   // checkoutOrder,
   // getAllPaymentByOrganizer,
 } = require('../../../services/mongoose/participants');
@@ -47,41 +47,41 @@ const signin = async (req, res, next) => {
   }
 };
 
-// const getAllLandingPage = async (req, res, next) => {
-//   try {
-//     const result = await getAllEvents(req);
+const getAllLandingPage = async (req, res, next) => {
+  try {
+    const result = await getAllEvents(req);
 
-//     res.status(StatusCodes.OK).json({
-//       data: result,
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// };
+    res.status(StatusCodes.OK).json({
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 
-// const getDashboard = async (req, res, next) => {
-//   try {
-//     const result = await getAllOrders(req);
+const getDashboard = async (req, res, next) => {
+  try {
+    const result = await getAllOrders(req);
 
-//     res.status(StatusCodes.OK).json({
-//       data: result,
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// };
+    res.status(StatusCodes.OK).json({
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 
-// const getDetailLandingPage = async (req, res, next) => {
-//   try {
-//     const result = await getOneEvent(req);
+const getDetailLandingPage = async (req, res, next) => {
+  try {
+    const result = await getOneEvent(req);
 
-//     res.status(StatusCodes.OK).json({
-//       data: result,
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// };
+    res.status(StatusCodes.OK).json({
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 
 // const getAllPayment = async (req, res, next) => {
 //   try {
@@ -111,9 +111,9 @@ module.exports = {
   signup,
   activeParticipant,
   signin,
-  // getAllLandingPage,
-  // getDetailLandingPage,
-  // getDashboard,
+  getAllLandingPage,
+  getDetailLandingPage,
+  getDashboard,
   // checkout,
   // getAllPayment,
 };
